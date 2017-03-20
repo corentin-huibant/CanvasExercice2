@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Canvas - exercice 2</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <canvas id="canvas">
+      <p>Désolé, votre navigateur ne supporte pas Canvas. Mettez-vous à jour</p>
+    </canvas>
+    <a href="file:///home/corentin/www/canvas/exercice3/index.html"><button type="button" name="button">exercice 3</button></a>
+    <script type="text/javascript">
+      //declaration de l variable canvas qui reprend l'id de la balise
+      var canvas = document.getElementById('canvas');
+      //A celle-ci, on applique le contexte 2d
+      var context = canvas.getContext('2d');
+
+      context.fillStyle = 'rgb(164, 215, 231)'; // annonce de la couleur
+      //création d'un carré avec la méthode fill (les deux premiers chiffres représentent la position sur la page (largeur et hauteur)n les deux suivants sont la largeur et la taille)
+      context.fillRect(80, 80, 120, 60);
+      context.fillStyle = 'rgb(201,201,201)';
+      context.fillRect(85, 85, 20, 10);
+      context.fillStyle = 'rgb(201,201,201)';
+      context.fillRect(175, 85, 20, 10);
+      context.fillStyle = 'rgb(201,201,201)';
+      context.fillRect(130, 120, 20, 20);
+      //création d'un chemin
+      context.fillStyle = 'rgb(211,132,53)'; //annonce de la couleur
+      context.beginPath(); //déclare qu'on commence le cheminement
+      context.moveTo(80, 80); // on se place d'abord à cette coordonnée grace à moveTo
+      context.lineTo(200, 80); //ensuite, on se déplace point par point avec lineTo
+      context.lineTo(142, 50);
+      context.fill(); //enfin, on déclare la méthode de remplissage
+
+    </script>
+  </body>
+</html>
